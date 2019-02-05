@@ -5,12 +5,13 @@
     <br>
       <input type="text" name="password" v-model="password" placeholder="password">
       <br>
-      <button>Register</button>
+      <button @click="register">Register</button>
 
   </div>
 </template>
 
 <script>
+import AuthenticationService from '@/services/AuthenticationService'
 export default {
   data () {
     return {
@@ -19,15 +20,14 @@ export default {
 
     }
   },
-  watch: {
-    email (value) {
-      console.log('email has changed', value)
+  methods: {
+    async register () {
+      const response = await AuthenticationService.register({
+        email: this.email,
+        password: this.password
+      })
+      console.log(response.data)
     }
-  },
-  mounted () {
-    setTimeout(() => {
-
-    }, 1000)
   }
 }
 </script>
