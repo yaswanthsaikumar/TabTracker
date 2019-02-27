@@ -1,4 +1,4 @@
-"use strict";
+
 const fs = require('fs')
 const path = require('path')
 const Sequelize = require('sequelize')
@@ -17,7 +17,7 @@ fs
     file !== 'index.js'
     )
     .forEach((file) => {
-      const model = sequelize.import(path.join(__dirname,file))
+      const model = sequelize.import(path.join(__dirname, file))
       db[model.name] = model
     })
 
