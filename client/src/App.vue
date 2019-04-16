@@ -1,23 +1,22 @@
 <template>
   <div id="app">
     <v-app>
-      <page-header/>
-     <main>
-       <v-container fluid>
-        <router-view>
+      <page-header />
 
-        </router-view>
-       </v-container>
-     </main>
+      <main>
+        <v-container fluid>
+          <router-view></router-view>
+        </v-container>
+      </main>
     </v-app>
-
   </div>
 </template>
 
 <script>
 import PageHeader from '@/components/Header.vue'
+
 export default {
-  name: 'App',
+  name: 'app',
   components: {
     PageHeader
   }
@@ -34,13 +33,7 @@ export default {
   margin-top: 60px;
 }
 
-.input-group--text-field input {
-  border-bottom: 1px solid black;}
-/*
-.toolbar-title {
-  color: white;
+.danger-alert {
+  color: red;
 }
-.btn__content {
-  color: white;
-}*/
 </style>
