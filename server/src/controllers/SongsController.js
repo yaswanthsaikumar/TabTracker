@@ -1,4 +1,4 @@
-const { Song } = require('../models')
+const {Song} = require('../models')
 
 module.exports = {
   async index (req, res) {
@@ -56,7 +56,7 @@ module.exports = {
           id: req.params.songId
         }
       })
-      res.send(song)
+      res.send(req.body)
     } catch (err) {
       res.status(500).send({
         error: 'an error has occured trying to update the song'
